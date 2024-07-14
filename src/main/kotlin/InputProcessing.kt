@@ -2,7 +2,7 @@ class InputProcessing {
     fun processInput(): Int {
         val number: Int
         try {
-            number = readln().toInt()
+            number = readln().trim().toInt()
         } catch (e: NumberFormatException) {
             throw WrongInputException("Выбор пункта меню должен осуществляться вводом цифры!")
         }
@@ -18,7 +18,7 @@ class InputProcessing {
     }
 
     fun createNewNameInput(): String {
-        val input = readln()
+        val input = readln().trim()
         if (input.isBlank()) {
             println("Название не может быть пустым!")
             return createNewNameInput()
@@ -27,7 +27,7 @@ class InputProcessing {
     }
 
     fun newNoteContentInput(): String {
-        val input = readln()
+        val input = readln().trim()
         if (input.isBlank()) {
             println("Содержание заметки не может быть пустым!")
             return createNewNameInput()
